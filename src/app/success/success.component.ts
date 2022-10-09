@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
   styleUrls: ['success.component.css']
 })
 export class SuccessComponent {
-
+  message: string = "This message was passed by Property Binding."
 }
