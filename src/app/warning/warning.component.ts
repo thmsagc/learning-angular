@@ -6,5 +6,5 @@ import {Component} from "@angular/core";
   styleUrls: ['warning.component.css']
 })
 export class WarningComponent {
-
+  message: string = 'This alert message was passed by string interpolation.';
 }
