@@ -16,6 +16,10 @@ export class AppComponent {
     }, 2000)
   }
 
+  onChangeMessage(event: Event) {
+    this.message = (<HTMLInputElement>event.target).value;
+  }
+
   onCreateMessage() {
     this.message = "A new message was created."
   }
