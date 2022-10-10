@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   enableNewMessage = false;
   message: string = "Waiting for click!"
+  username: string = "";
 
   constructor() {
     setTimeout(() => {
@@ -22,6 +23,10 @@ export class AppComponent {
 
   onCreateMessage() {
     this.message = "A new message was created."
+  }
+
+  getColor() {
+    return this.username.length > 0 ? 'green' : 'red';
   }
 
 }

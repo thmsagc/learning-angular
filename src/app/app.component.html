@@ -4,23 +4,69 @@
       <h3>Hello world</h3>
       <hr>
       <app-server></app-server>
+
+      <hr>
+
+      <h4>First look at Databinding</h4>
       <app-success></app-success>
       <app-warning></app-warning>
 
       <hr>
 
+      <h4>Event Databinding with button</h4>
+      <button
+        class="btn btn-primary"
+        [disabled]="!enableNewMessage"
+        (click)="onCreateMessage()">Add a new message</button>
 
+      <hr>
+
+      <h4>Text input with Event Databinding</h4>
       <input
       type="text"
       class="form-control"
       (input)="onChangeMessage($event)">
 
+      <hr>
+
+      <h4>Text input with Two-Way-Databinding</h4>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="message">
+
+      <hr>
+
+      <h4>Final message:</h4>
       <p [innerText]="message"></p>
 
-      <button
-        class="btn btn-primary"
-        [disabled]="!enableNewMessage"
-        (click)="onCreateMessage()">Add a new message</button>
+      <hr>
+      <h4>Exercising Databinding</h4>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="username">
+
+      <p>Username: {{username}}</p>
+
+<!--      <button-->
+<!--        class="btn btn-primary"-->
+<!--        (click)="username = ''"-->
+<!--        [disabled]="username.length == 0">Reset username</button>-->
+
+      <hr>
+      <h4>Directive ngIf to show username conditionally and ngElse</h4>
+      <p *ngIf="username.length > 0; else noUsername">Username: {{username}}</p>
+
+      <ng-template #noUsername>
+        <p>
+          No one username was inputed.
+        </p>
+      </ng-template>
+
+      <hr>
+      <h4>Directive ngStyle to show a color conditionally regarding username</h4>
+      <p [ngStyle]="{backgroundColor: getColor()}">USERNAME STATUS</p>
 
 
     </div>
